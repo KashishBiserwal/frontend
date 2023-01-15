@@ -1,0 +1,21 @@
+.product-card{
+    border: 2px solid black;
+    max-width: fit-content;
+    padding: 2rem;
+    background-color: white;
+
+    p{
+        color: $black;
+    }
+    img{
+        max-width: 13rem;
+    }
+    &:hover{
+        transform: translateY(-10px);
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px black ;
+    }
+}
+.products-container{
+    border: 1px solid blue;
+}
