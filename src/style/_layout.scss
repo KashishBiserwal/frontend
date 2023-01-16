@@ -1,6 +1,7 @@
 $black: #242424;
 $blue: #01aade;
 $red: #c3073f;
+$btn: rgb(233, 233, 233);
 
 .header{
     background-color: $black;
@@ -118,6 +119,26 @@ $red: #c3073f;
     justify-content: space-between;
     color: white;
 }
+.header-button{
+    background-color: #191a1e;
+    color: $btn;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 10px 10px 0px 0px;
+    border: 0;
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    &:hover{
+        color: #01aade;
+    }
+}
+
+
+
+// FOOTER
+
 #footer{
     background-color: $black;
     color: white;
