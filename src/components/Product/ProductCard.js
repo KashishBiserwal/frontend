@@ -12,14 +12,14 @@ export default function ProductCard({product}) {
     isHalf: true,
   }
   return (
-    <Link to={`/${product._id}`}>
+    <Link to={`/${product._id}`} style={{textDecoration: "none"}}>
         <div className='product-card'>
-            <img src={product.images[0].url} alt={product.name}/>
+            <div className='image'><img src={product.images[0].url} alt={product.name}/></div>
             <p>{product.name}</p>
             <div className='stars'>
                 <ReactStart {...options} /> <span>({product.numOfReviews})</span>
             </div>
-            <span>{product.price}</span>
+            <span className='price'>&#8377;{product.price}</span>
         </div>
     </Link>
   )

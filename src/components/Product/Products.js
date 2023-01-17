@@ -23,12 +23,12 @@ export default function Products() {
           <Loader />
         ) : (
           <div>
-            <h1>Products</h1>
-            <div>
-              {products && products.map((product) => {
-                return <ProductCard product={product} key={product._id}/>
-              })}
-            </div>
+            <h1 className='heading'>Products</h1>
+              <div className='products-container'>
+                {products && products.map((product) => {
+                  return <ProductCard product={product} key={product._id}/>
+                })}
+              </div>
           </div>
         )
       }
