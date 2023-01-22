@@ -1,9 +1,19 @@
+$black: #282828;
+$blue: #1ba4db;
+:root {
+    --swiper-navigation-size: 18px !important;
+    --swiper-theme-color: #1ba4db !important;
+}
+.swiper-pagination-bullets{
+    bottom: 0 !important;
+}
 .product-card{
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: white;
     border-radius: 10px;
-    width: 15rem;
-    height: 18rem;
+    display: grid;
+    place-items: center;
+    max-width: 16rem;
 
     p{
         color: $black;
@@ -25,12 +35,16 @@
         font-weight: 500;
         color: $blue;
     }
-    .image{
-        height: 10rem;
-    }
+}
+.product-name{
+    white-space: nowrap; 
+    width: 70%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    text-align: center;
 }
 .products-container{
-    padding: 2rem 0;
+    padding: 1rem 0;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     row-gap: 2rem;
@@ -49,18 +63,33 @@
     margin: 2rem 7rem;
     border-radius: 10px;
     display: flex;
+    height: auto;
 
     .images{
-        border: 1px solid black;
-        height: 20rem;
-        width: 40%;
+        width: 50%;
+        display: grid;
+        grid-template-columns: minmax(1rem, 15%) 1fr;
+        .all{
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+        .main{
+            .main-swiper{
+                max-width: 20rem;
+                img{
+                    width: 100%;
+                    padding: 1rem;
+                    cursor: pointer;
+                }
+            }
+        }
     }
     .details{
-        height: 20rem;
-        width: 60%;
         margin-left: 2rem;
     }
 }
+
 
 .red{
     color: red;

@@ -7,15 +7,15 @@ export default function ProductCard({product}) {
     edit: false,
     color: "gray",
     activeColor: "tomato",
-    size: window.innerWidth < 600 ? 20 : 25,
-    value: product.rating,
+    size: window.innerWidth < 600 ? 18 : 20,
+    value: product.ratings,
     isHalf: true,
   }
   return (
     <Link to={`/${product._id}`} style={{textDecoration: "none"}}>
         <div className='product-card'>
-            <div className='image'><img src={product.images[0].url} alt={product.name}/></div>
-            <p>{product.name}</p>
+            <div className='image'><img src={`images/products/${product.images[0]}`} alt={product.name}/></div>
+            <p className='product-name'>{product.name}</p>
             <div className='stars'>
                 <ReactStart {...options} /> <span>({product.numOfReviews})</span>
             </div>

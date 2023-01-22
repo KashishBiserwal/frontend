@@ -25,3 +25,5 @@ yarn-error.log*
 # scss
 style.css
 style.css.map
+/images
+public/images

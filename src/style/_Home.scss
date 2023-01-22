@@ -61,10 +61,8 @@
     }
 }
 .four-container{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-content: space-between;
-    column-gap: 3rem;
+    display: flex;
+    justify-content: space-around;
 }
 .category-card{
     border: 0;
@@ -76,6 +74,7 @@
     cursor: pointer;
     border-radius: 5px;
     background-color: white;
+    padding: 1rem;
 
     img{
         width: auto;

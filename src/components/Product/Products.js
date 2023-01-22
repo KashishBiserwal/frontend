@@ -10,7 +10,6 @@ import { useParams } from 'react-router-dom';
 export default function Products() {
     const dispatch = useDispatch();
     const {keyword} = useParams();
-    console.log(keyword);
     const {loading, products} = useSelector(state => state.products);
     useEffect(() => {
       dispatch(getProduct(keyword));
