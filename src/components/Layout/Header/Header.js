@@ -9,7 +9,7 @@ export default function Header() {
     <div className='header'>
       <div className='header-content'>
         <div className='top'>
-          <h1 className='logo'>Figurz</h1>
+          <Link to="/" style={{textDecoration: "none"}}><h1 className='logo'>Figurz</h1></Link>
           <div className='top-right'>
             <Search />
             <Cart />

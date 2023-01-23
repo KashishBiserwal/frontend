@@ -1,7 +1,8 @@
 $black: #282828;
 $blue: #1ba4db;
+$red: #c3073f;
 :root {
-    --swiper-navigation-size: 18px !important;
+    --swiper-navigation-size: 20px !important;
     --swiper-theme-color: #1ba4db !important;
 }
 .swiper-pagination-bullets{
@@ -73,6 +74,7 @@ $blue: #1ba4db;
             display: flex;
             flex-direction: column;
             row-gap: 1rem;
+            justify-content: center;
         }
         .main{
             .main-swiper{
@@ -93,4 +95,40 @@ $blue: #1ba4db;
 
 .red{
     color: red;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin: 4vmax;
+    list-style: none;
+}
+.page-item{
+    background-color: #1ba4db;
+    border: 1px solid rgb(233, 233, 233);
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    &:hover{
+        background-color: gray;
+    }
+    &:first-child{
+        border-radius: 5px 0 0 5px;
+        background-color: $black;
+        &:hover{
+            background-color: rgb(108, 108, 108);
+        }
+    }
+    &:last-child{
+        border-radius: 0 5px 5px 0;
+        background-color: $black;
+        &:hover{
+            background-color: gray;
+        }
+    }
+}
+.page-link{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
 }

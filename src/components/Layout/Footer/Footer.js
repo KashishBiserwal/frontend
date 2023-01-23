@@ -8,7 +8,7 @@ export default function Footer() {
         <div className='footer-content'>
           <div>
             <div className='logo'>FIGURZ</div>
-            <p>!&copy; 2022 Kashish</p>
+            <p>!&copy; 2023 Kashish</p>
           </div>
           <QuickLinks />
           <Form />

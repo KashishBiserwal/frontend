@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductDetails } from '../../actions/productAction'
@@ -9,6 +9,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import ReactStart from "react-rating-stars-component"
+import AddToCart from '../Cart/AddToCart';
+import ReviewCard from './ReviewCard';
 
 export default function SingleProduct() {
     const dispatch = useDispatch();
@@ -34,7 +36,8 @@ export default function SingleProduct() {
           loading? (
             <Loader />
           ) : (
-            <div className='single-product-container'>
+            <div>
+              <div className='single-product-container'>
               <div className='images'>
                 <div className='all'>
                 {
@@ -64,8 +67,18 @@ export default function SingleProduct() {
                   <ReactStart {...options} /> <span>({product.numOfReviews})</span>
                 </div>
                 {product.stock <= 0 && <p className='red'>Out of stock</p>}
+                <hr style={{margin: '1rem 0'}}/>
+                {product.stock > 0 && <AddToCart product={product}/>}
               </div>
             </div>
+            <div>
+              {product.reviews && product.reviews[0] ? 
+              <div>
+                {product.reviews && product.reviews.map((review) => <ReviewCard review={review}/>)}
+              </div> : <p>No reviews yet!</p>}
+            </div>
+            </div>
+            
           )
         }
     </div>

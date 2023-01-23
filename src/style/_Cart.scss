@@ -1,0 +1,41 @@
+$blue: #1ba4db;
+$light-blue: #1ba5db94;
+
+.size{
+  padding: 5px 8px;
+  margin: 0 3px;
+  border: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.size-active{
+  border: 0;
+  background-color: $blue;
+  color: white;
+}
+.amount-toggle{
+  display: flex;
+  place-items: center;
+  margin: 1.5rem 0;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background-color: $blue;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 5px;
+    transition: all ease 0.1s;
+    box-shadow: 0px 5px 0px 0px $light-blue;
+    &:active {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px 0px $light-blue;
+    }
+}
+
+  
+  
