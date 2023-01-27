@@ -9,10 +9,14 @@ import {
     CLEAR_ERRORS
 } from "../constants/productConstants";
 
-export const getProduct = (keyword="", currentPage = 1) => async (dispatch) => {
+export const getProduct = (keyword="", currentPage = 1, category) => async (dispatch) => {
     try {
         dispatch({type: ALL_PRODUCTS_REQUEST});
-        const {data} = await axios.get(`https://backend-figurz.vercel.app/api/products?keyword=${keyword}&page=${currentPage}`);
+        let link = `https://backend-figurz.vercel.app/api/products?keyword=${keyword}&page=${currentPage}`;
+        if(category){
+            link = `https://backend-figurz.vercel.app/api/products?keyword=${keyword}&page=${currentPage}&category=${category}`;
+        }
+        const {data} = await axios.get(link);
         dispatch({type: ALL_PRODUCTS_SUCCESS, payload: data});
     } catch (error) {
         dispatch({type: ALL_PRODUCTS_FAIL, payload: error.response.data.message});
