@@ -5,6 +5,7 @@ import Error from "./components/Error";
 import "./style/style.css"
 import SingleProduct from "./components/Product/SingleProduct";
 import Products from "./components/Product/Products";
+import LoginSignUp from "./User/LoginSignUp";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/products" element={<Products />}/>
           <Route path="/products/:keyword" element={<Products />}/>
           <Route path="/:id" element={<SingleProduct />}/>
+          <Route path="login" element={<LoginSignUp />} />
 
           <Route path="*" element={<Error />}/>
         </Route>
