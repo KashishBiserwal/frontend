@@ -37,6 +37,7 @@ export default function LoginSignUp() {
         myForm.set("name", name);
         myForm.set("email", email);
         myForm.set("password", password);
+        dispatch(register(myForm));
     };
 
     const registerDataChange = (e) => {
@@ -45,9 +46,9 @@ export default function LoginSignUp() {
 
     useEffect(() => {
         if (isAuthenticated) {
-          navigate(`/account`)
+          navigate('/account')
         }
-    }, [])           /////////  [isAuthenticated, navigate]  //////////////
+    }, [isAuthenticated, navigate])       
 
     const switchTabs = (e, tab) => {
         if (tab === "login") {
@@ -79,8 +80,7 @@ export default function LoginSignUp() {
                 </div>
                 <button ref={switcherTab}></button>
               </div>
-              <form className="loginForm" ref={loginTab} >
-              onSubmit={loginSubmit}
+              <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
                 <div className="loginEmail">
                   {/* <MailOutlineIcon /> */}
                   <input
