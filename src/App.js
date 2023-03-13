@@ -7,8 +7,15 @@ import SingleProduct from "./components/Product/SingleProduct";
 import Products from "./components/Product/Products";
 import LoginSignUp from "./User/LoginSignUp";
 import Account from "./User/account";
+import { useEffect } from "react";
+import { loadUser } from "./actions/userAction";
+import store from './store';
 
 function App() {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, [])
+  
   return (
     <>
       <BrowserRouter>

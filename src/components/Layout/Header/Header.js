@@ -3,8 +3,11 @@ import Search from './Search'
 import Cart from './Cart'
 import Swipe from './Swipe'
 import { Link } from 'react-router-dom'
+import UserOptions from './UserOptions'
+import { useSelector } from 'react-redux'
 
 export default function Header() {
+  const {isAuthenticated, user} = useSelector(state => state.user)
   return (
     <div className='header'>
       <div className='header-content'>
@@ -20,10 +23,13 @@ export default function Header() {
         </div>
         <div className='bottom'>
           <div>
-            <Link to="products"><button className='header-button products-button'>Products</button></Link>
+            <Link to="products"><button className='header-button'>Products</button></Link>
           </div>
-          <div>
-            <Link to="login"><button className='header-button login-button'>Login</button></Link>
+          <div className='login-me'>
+            <div style={{marginLeft: "15px"}}>
+              <Link to="login"><button className='header-button'>Login</button></Link>
+            </div>
+            {isAuthenticated && <UserOptions user={user} />}
           </div>
         </div>
       </div>
