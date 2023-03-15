@@ -7,7 +7,7 @@ const store = configureStore({
     reducer: {
         products: productReducer,
         productDetails: productDetailsReducer,
-        user: userReducer
+        user: userReducer,
     },
     initialState
 });

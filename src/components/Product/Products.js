@@ -20,12 +20,12 @@ const categories = [
   "dc"
 ]
 
-export default function Products() {
+export default function Products({category, setCategory}) {
     const [show, setShow] = useState(true);
     
     const [currentPage, setCurrentPage] = useState(1);
     const [price, setPrice] = useState([0, 5000]);
-    const [category, setCategory] = useState("")
+    
     const priceHandler = (event, newPrice) => {
       setPrice(newPrice);
       console.log(price);

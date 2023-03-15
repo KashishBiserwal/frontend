@@ -4,14 +4,14 @@ import Header from './Header/Header'
 
 
 
-const Layout = () => {
+const Layout = (props) => {
   return (
     <div className='full'>
-      <Header />
+      <Header onButtonClick={props.onButtonClick}/>
       <div className="body">
         <Outlet />
       </div>
-      <Footer />
+      <Footer onButtonClick={props.onButtonClick}/>
     </div>
   );
 };

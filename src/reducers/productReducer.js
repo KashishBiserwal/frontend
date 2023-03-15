@@ -5,6 +5,7 @@ import {
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL,
+    SET_CATEGORY,
     CLEAR_ERRORS
 } from "../constants/productConstants";
 
@@ -27,6 +28,11 @@ export const productReducer = (state = {products: []}, action) => {
             return {
                 loading: false,
                 error: action.payload
+            }
+        case SET_CATEGORY:
+            return {
+                ...state,
+                category: action.payload
             }
         case CLEAR_ERRORS:
             return {
