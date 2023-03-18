@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-export default function UserOptions() {
+export default function UserOptions(props) {
   return (
     <div>
-        <Link to="/account"><button className='header-button'>Me</button></Link>
+        <Link to="/account"><button className='header-button'>{props.user.name[0].toUpperCase()}</button></Link>
     </div>
   )
 }

@@ -1,12 +1,11 @@
 import React from 'react'
 import Search from './Search'
-import Cart from './Cart'
+import { BiCartAlt } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import UserOptions from './UserOptions'
 import { useSelector } from 'react-redux'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import Box from './Box';
 
 export default function Header(props) {
   const {isAuthenticated, user} = useSelector(state => state.user)
@@ -17,10 +16,10 @@ export default function Header(props) {
           <Link to="/" style={{textDecoration: "none"}}><h1 className='logo'>figurz</h1></Link>
           <div className='top-right'>
             <Search />
-            <Cart />
+            <Link to={'MyCart'}><BiCartAlt className='cart-icon'/></Link>   
           </div>
         </div>
-        {/* <div className='mid'>
+        <div className='mid'>
         <Swiper
           spaceBetween={20}
           slidesPerView={11}
@@ -51,29 +50,28 @@ export default function Header(props) {
             }
           }}
         >
-          <SwiperSlide><Box link='products' img='images/nav-swiper/ssm.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/flash' img='images/nav-swiper/sf.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/ironman' img='images/nav-swiper/sim.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/spiderman' img='images/nav-swiper/sspiderman.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/wonder woman' img='images/nav-swiper/sww.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/punisher' img='images/nav-swiper/sp.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/batman' img='images/nav-swiper/sb.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/captain america' img='images/nav-swiper/sca.jpg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/black panther' img='images/nav-swiper/sbp.jpg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/superman' img='images/nav-swiper/ssm.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/flash' img='images/nav-swiper/sf.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/ironman' img='images/nav-swiper/sim.jpeg'/></SwiperSlide>
-          <SwiperSlide><Box link='Hero/spiderman' img='images/nav-swiper/sspiderman.jpeg'/></SwiperSlide>
-          
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('superman')}><div className='box'><img src='images/nav-swiper/ssm.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('flash')}><div className='box'><img src='images/nav-swiper/sf.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('ironman')}><div className='box'><img src='images/nav-swiper/sim.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('spiderman')}><div className='box'><img src='images/nav-swiper/sspiderman.jpeg'alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('wonder woman')}><div className='box'><img src='images/nav-swiper/sww.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('punisher')}><div className='box'><img src='images/nav-swiper/sp.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('batman')}><div className='box'><img src='images/nav-swiper/sb.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('captain america')}><div className='box'><img src='images/nav-swiper/sca.jpg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('black panther')}><div className='box'><img src='images/nav-swiper/sbp.jpg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('superman')}><div className='box'><img src='images/nav-swiper/ssm.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('flash')}><div className='box'><img src='images/nav-swiper/sf.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('ironman')}><div className='box'><img src='images/nav-swiper/sim.jpeg' alt="nothing" /></div></Link></SwiperSlide>
+          <SwiperSlide><Link to={'products'} onClick={() => props.onButtonClick('spiderman')}><div className='box'><img src='images/nav-swiper/sspiderman.jpeg' alt="nothing" /></div></Link></SwiperSlide>
         </Swiper>
-        </div> */}
+        </div>
         <div className='bottom'>
           <div>
             <Link to="products"><button className='header-button'>Products</button></Link>
           </div>
           <div className='login-me'>
             <div style={{marginLeft: "15px"}}>
-              <Link to="login"><button className='header-button'><p>Sign In  |  Join</p></button></Link>
+              {!isAuthenticated && <Link to="login"><button className='header-button'><p>Sign In  |  Join</p></button></Link>}
             </div>
             {isAuthenticated && <UserOptions user={user} />}
           </div>

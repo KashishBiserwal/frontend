@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { getProductDetails } from '../../actions/productAction'
@@ -9,14 +9,30 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import ReactStart from "react-rating-stars-component"
-import AddToCart from '../Cart/AddToCart';
+import CartAmountToggle from '../Cart/CartAmountToggle';
 import ReviewCard from './ReviewCard';
+import { addItemsToCart } from '../../actions/cartAction';
 
 export default function SingleProduct() {
     const dispatch = useDispatch();
     const {loading, product} = useSelector(state => state.productDetails);
     const {id} = useParams();
     const imagesArray = product.images;
+    const {sizes, stock} = product;
+    const [size, setSize] = useState(sizes);
+    const [amount, setAmount] = useState(1);
+    const setDecrease = () => {
+        amount > 1 ? setAmount(amount - 1) : setAmount(1);
+    }
+    const setIncrease = () => {
+        amount < 10 ? setAmount(amount + 1) : setAmount(10);
+    }
+
+    const addToCartHandler = () => {
+      dispatch(addItemsToCart(id, amount)) 
+      alert('Added to cart')
+    }
+
     useEffect(() => {
         dispatch(getProductDetails(id));
       }, [dispatch, id])
@@ -68,7 +84,21 @@ export default function SingleProduct() {
                 </div>
                 {product.stock <= 0 && <p className='red'>Out of stock</p>}
                 <hr style={{margin: '1rem 0'}}/>
-                {product.stock > 0 && <AddToCart product={product}/>}
+                {product.stock > 0 && 
+                <div>
+                <p><span style={{marginRight: '0.5rem'}}>Size:</span>
+                    {sizes.map((items, index) => {
+                        return <button className={size === items ? 'size size-active' : 'size'} key={index} onClick={()=>setSize(items)}>{items}</button>
+                    })}
+                </p>
+                <CartAmountToggle 
+                    amount={amount}
+                    setDecrease={setDecrease}
+                    setIncrease={setIncrease}
+                />
+                <button className='btn' onClick={() => addToCartHandler()}>Add To Cart</button>
+            </div>
+                }
               </div>
             </div>
             <div>

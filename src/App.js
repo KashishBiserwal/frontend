@@ -10,6 +10,7 @@ import Account from "./User/account";
 import { useEffect, useState } from "react";
 import { loadUser } from "./actions/userAction";
 import store from './store';
+import MyCart from "./components/Cart/MyCart";
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,8 @@ function App() {
           <Route path="/:id" element={<SingleProduct />}/>
           <Route path="login" element={<LoginSignUp />} />
           <Route path="account" element={<Account />} />
+          <Route path="MyCart" element={<MyCart />} />
+
           <Route path="*" element={<Error />}/>
         </Route>
       </Routes>
