@@ -20,17 +20,16 @@ export default function SingleProduct() {
     const imagesArray = product.images;
     const {sizes, stock} = product;
     const [size, setSize] = useState(sizes);
-    const [amount, setAmount] = useState(1);
+    const [quantity, setQuantity] = useState(1);
     const setDecrease = () => {
-        amount > 1 ? setAmount(amount - 1) : setAmount(1);
+        quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1);
     }
     const setIncrease = () => {
-        amount < 10 ? setAmount(amount + 1) : setAmount(10);
+        quantity < 10 ? setQuantity(quantity + 1) : setQuantity(10);
     }
 
     const addToCartHandler = () => {
-      dispatch(addItemsToCart(id, amount)) 
-      alert('Added to cart')
+      dispatch(addItemsToCart(id, quantity)) 
     }
 
     useEffect(() => {
@@ -92,7 +91,7 @@ export default function SingleProduct() {
                     })}
                 </p>
                 <CartAmountToggle 
-                    amount={amount}
+                    quantity={quantity}
                     setDecrease={setDecrease}
                     setIncrease={setIncrease}
                 />
@@ -101,12 +100,12 @@ export default function SingleProduct() {
                 }
               </div>
             </div>
-            <div>
+            {/* <div>
               {product.reviews && product.reviews[0] ? 
               <div>
-                {product.reviews && product.reviews.map((review) => <ReviewCard review={review}/>)}
-              </div> : <p>No reviews yet!</p>}
-            </div>
+                {product.reviews && product.reviews.map((review, index) => <ReviewCard review={review} key={index}/>)}
+              </div> : " "}
+            </div> */}
             </div>
             
           )

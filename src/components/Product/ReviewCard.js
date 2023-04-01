@@ -13,7 +13,6 @@ export default function ReviewCard({review}) {
     
     return (
         <div className="reviewCard">
-          {/* <img src={profilePng} alt="User" /> */}
             <p>{review.name}</p>
             <div className='stars'>
                 <ReactStart {...options} /> <span>({review.numOfReviews})</span>

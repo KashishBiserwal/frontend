@@ -1,5 +1,4 @@
 import React, {useRef, useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, register } from '../actions/userAction';
 import Loader from '../components/Layout/Loader'; 

@@ -7,7 +7,9 @@ import {
     REGISTER_FAIL,
     LOAD_USER_REQUEST,
     LOAD_USER_SUCCESS,
-    LOAD_USER_FAIL
+    LOAD_USER_FAIL,
+    LOGOUT_SUCCESS,
+    LOGOUT_FAIL
 } from "../constants/userContstants"
 import axios from "axios";
 
@@ -33,8 +35,6 @@ export const login = (email, password) => async (dispatch) => {
             type: LOGIN_SUCCESS,
             payload: data, 
         });
-        alert("Login Successfull")
-        
         localStorage.setItem("userInfo", JSON.stringify(data));
     }catch(error){
         alert("Login Failed. Check your email and password.")
@@ -81,7 +81,7 @@ export const loadUser = () => async (dispatch) => {
             type: LOAD_USER_SUCCESS,
             payload: data, 
         });
-        // localStorage.setItem("userInfo", JSON.stringify(data));
+        localStorage.setItem("userInfo", JSON.stringify(data));
     }catch(error){
         dispatch({
             type: LOAD_USER_FAIL,
@@ -91,3 +91,14 @@ export const loadUser = () => async (dispatch) => {
         });
     }
 }
+
+export const logout = () => async (dispatch) => {
+    try {
+      await axios.post("https://backend-figurz.vercel.app/api/logout");
+      dispatch({ type: LOGOUT_SUCCESS });
+      alert("Logout Successfull")
+    } catch (error) {
+      dispatch({ type: LOGOUT_FAIL, payload: error.response.data.message });
+      alert("Logout Failed")
+    }
+  };

@@ -1,3 +1,8 @@
+$blue: #01aade;
+$red: #c3073f;
+$red2: #cd3237;
+
+
 .LoginSignUpContainer {
     display: flex;
     justify-content: center;
@@ -17,7 +22,7 @@
   }
   .login_signUp_toggle > p {
     color: rgba(0, 0, 0, 0.678);
-    font: 300 1vmax "Roboto";
+    font-family: 'Josefin Sans', sans-serif;
     transition: all 0.5s;
     cursor: pointer;
     display: grid;
@@ -25,11 +30,11 @@
     width: 100%;
   }
   .login_signUp_toggle > p:hover {
-    color: tomato;
+    color: $red2;
   }
   
   .LoginSignUpBox > div > button {
-    background-color: tomato;
+    background-color: $red2;
     height: 3px;
     width: 50%;
     border: none;
@@ -83,7 +88,7 @@
     text-decoration: none;
     align-self: flex-end;
     transition: all 0.5s;
-    font: 500 0.8vmax "Gill Sans";
+    font-family: 'Josefin Sans', sans-serif;
   }
   
   .loginForm > a:hover {
@@ -120,9 +125,9 @@
   .loginBtn,
   .signUpBtn {
     border: none;
-    background-color: tomato;
+    background-color: $red2;
     color: white;
-    font: 300 0.9vmax "Roboto";
+    font-family: 'Josefin Sans', sans-serif;
     width: 100%;
     padding: 0.8vmax;
     cursor: pointer;
@@ -134,7 +139,7 @@
   
   .loginBtn:hover,
   .signUpBtn:hover {
-    background-color: rgb(179, 66, 46);
+    background-color: $blue;
   }
   
   .shiftToLeft {
@@ -206,4 +211,11 @@
 
 .login-me{
   display: flex;
+}
+.logout-btn{
+  display: block;
+  float: right;
+}
+.mt1{
+  margin-top: 2rem;
 }

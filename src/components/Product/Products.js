@@ -40,7 +40,6 @@ export default function Products({category, setCategory}) {
     const {loading, products, productCount, resultPerPage} = useSelector(state => state.products);
     useEffect(() => {
       dispatch(getProduct(keyword, currentPage, category));
-      console.log(category);
     }, [dispatch, keyword, currentPage, category])
 
     function toggleShow(){
