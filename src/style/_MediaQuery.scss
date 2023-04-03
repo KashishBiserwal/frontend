@@ -10,11 +10,8 @@
 @media only screen and (max-width: 1070px){
     .four-container{
         .category-card{
-            height: 14rem;
+            height: 18rem;
         }
-    }
-    .products-container{
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 @media only screen and (max-width: 900px){
@@ -25,6 +22,14 @@
     .featured-heroes-container, .products-container{
         grid-template-columns: repeat(2, 1fr);
     }
+    .LoginSignUpBox{
+      width: 55vw;
+    }
+}
+@media only screen and (max-width: 690px){
+  .products-container{
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
     @media only screen and (max-width: 768px){
@@ -57,8 +62,28 @@
       display: grid;
       row-gap: 2rem;
     }
-    
+    .search{
+      right: 2rem;
     }
+    
+}
+@media only screen and (max-width: 570px){
+  .four-container .category-card {
+    height: 12rem;
+  }
+  .product-card{
+    margin: 0.5rem;
+  }
+  .footer-content{
+    flex-direction: column;
+  }
+  .quickLinks{
+    display: none;
+  }
+  .LoginSignUpBox{
+    width: 75vw;
+  }
+}
     @media only screen and (max-width: 535px){
     .categories{
       grid-template-columns: repeat(1, 1fr);
@@ -93,9 +118,7 @@
       flex-direction: column;
     }
     
-    .quickLinks{
-      display: none;
-    }
+    
     .form-container{
       width: 100%;
       margin-top: 2rem;

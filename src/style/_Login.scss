@@ -4,15 +4,14 @@ $red2: #cd3237;
 
 
 .LoginSignUpContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-content: center;
+    margin-top: 3rem;
   }
   
   .LoginSignUpBox {
     background-color: white;
-    width: 25vw;
-    height: 60vh;
+    width: 30vw;
     box-sizing: border-box;
     overflow: hidden;
   }

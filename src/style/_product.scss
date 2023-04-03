@@ -15,6 +15,7 @@ $red: #c3073f;
     display: grid;
     place-items: center;
     max-width: 16rem;
+    margin: 1.5rem auto;
 
     p{
         color: $black;
@@ -47,11 +48,12 @@ $red: #c3073f;
 .products-container{
     padding: 1rem 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     row-gap: 2rem;
     place-items: center;
     background-color: white;
     border-radius: 5px;
+    grid-area: prods;
 }
 .heading{
     margin: 2rem 0 1rem 0;
@@ -152,14 +154,17 @@ $red: #c3073f;
 .filterbox{
     margin-right: 1rem;
     max-width: 14rem;
-    width: 12rem;
     max-height: 50rem;
     padding: 1rem;
 }
 
 .filterbox-products{
-    display: flex;
-    flex-direction: row-reverse;
+    display: grid;
+    grid-template-areas: 'filterss prods prods';
+}
+.fb-con{
+    grid-area: filterss;
+    display: block;
 }
 
 .show-hide{

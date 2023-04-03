@@ -118,3 +118,8 @@
         text-decoration: none;
     }
 }
+
+.center{
+    display: grid;
+    place-content: center;
+}

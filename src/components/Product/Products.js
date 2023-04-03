@@ -60,12 +60,7 @@ export default function Products({category, setCategory}) {
             <h1 className='heading'>Products</h1>
             <div className='show-hide' onClick={() => toggleShow()}> <GoThreeBars />{show? "Hide Filters": "Show Filters"}</div>
               <div className={show ? 'filterbox-products' : 'filterbox-products filter-section-hidden'}>
-              <div className={show ? 'products-container' : 'products-container full'}>
-                {products && products.map((product) => {
-                  return <ProductCard product={product} key={product._id}/>
-                })}
-              </div>
-              <div>
+              <div className='fb-con'>
                 <div className={show ? "filterbox": "hide"} >
                   <p className='cat-head'>Categories</p>
                   <ul className='categoryBox'>
@@ -82,6 +77,11 @@ export default function Products({category, setCategory}) {
                   <div><button className='clear-filters cat-head' onClick={() => clearFilters()}>Clear Filters</button></div>
                   
                 </div>
+              </div>
+              <div className='products-container'>
+                {products && products.map((product) => {
+                  return <ProductCard product={product} key={product._id}/>
+                })}
               </div>
               </div>
               <div>
