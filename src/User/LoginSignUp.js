@@ -81,7 +81,6 @@ export default function LoginSignUp() {
               </div>
               <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
                 <div className="loginEmail">
-                  {/* <MailOutlineIcon /> */}
                   <input
                     type="email"
                     placeholder="Email"
@@ -91,7 +90,6 @@ export default function LoginSignUp() {
                   />
                 </div>
                 <div className="loginPassword">
-                  {/* <LockOpenIcon /> */}
                   <input
                     type="password"
                     placeholder="Password"
@@ -109,7 +107,6 @@ export default function LoginSignUp() {
                 onSubmit={registerSubmit}
               >
                 <div className="signUpName">
-                  {/* <FaceIcon /> */}
                   <input
                     type="text"
                     placeholder="Name"
@@ -120,7 +117,6 @@ export default function LoginSignUp() {
                   />
                 </div>
                 <div className="signUpEmail">
-                  {/* <MailOutlineIcon /> */}
                   <input
                     type="email"
                     placeholder="Email"
@@ -131,7 +127,6 @@ export default function LoginSignUp() {
                   />
                 </div>
                 <div className="signUpPassword">
-                  {/* <LockOpenIcon /> */}
                   <input
                     type="password"
                     placeholder="Password"

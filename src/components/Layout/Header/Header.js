@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Search from './Search'
 import { BiCartAlt } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
@@ -9,6 +9,9 @@ import 'swiper/css';
 
 export default function Header(props) {
   const {isAuthenticated, user} = useSelector(state => state.user)
+  const {cartItems} = useSelector(state => state.cart);
+  const total_items = cartItems.reduce((acc, cur) => acc + cur.quantity, 0);
+
   return (
     <div className='header'>
       <div className='header-content'>
@@ -16,7 +19,9 @@ export default function Header(props) {
           <Link to="/" style={{textDecoration: "none"}}><h1 className='logo'>figurz</h1></Link>
           <div className='top-right'>
             <Search />
-            <Link to={'MyCart'}><BiCartAlt className='cart-icon'/></Link>   
+            <div className='header-cart'><Link to={'MyCart'}><BiCartAlt className='cart-icon'/></Link>
+              {total_items > 0 && <div className='cart-items-total'>{total_items}</div>}
+            </div>   
           </div>
         </div>
         <div className='mid'>
@@ -67,7 +72,7 @@ export default function Header(props) {
         </div>
         <div className='bottom'>
           <div>
-            <Link to="products"><button className='header-button'>Products</button></Link>
+            <Link to={'products'}><button className='header-button'>Products</button></Link>
           </div>
           <div className='login-me'>
             <div style={{marginLeft: "15px"}}>

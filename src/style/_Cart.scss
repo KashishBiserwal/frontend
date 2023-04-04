@@ -113,3 +113,21 @@ $light-blue: #1ba5db94;
   justify-content: space-between;
   margin: 2rem 0 1rem 0;
 }
+.cart-items-total{
+  color: white;
+  background: $blue;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 1px 5px;
+  position: relative;
+  bottom: 37px;
+  left: 4px;
+}
+
+.header-cart{
+  position: relative;
+  top: 7px;
+}

@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout onButtonClick={handleClick}/>}>
           <Route index element={<Home onButtonClick={handleClick} />} />
-          <Route path="/products" element={<Products category={category}/>}/>
+          <Route path="/products" element={<Products category={category} onButtonClick={handleClick}/>}/>
           <Route path="/products/:keyword" element={<Products />}/>
           <Route path="/:id" element={<SingleProduct />}/>
           <Route path="login" element={<LoginSignUp />} />
