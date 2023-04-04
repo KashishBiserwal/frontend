@@ -62,7 +62,7 @@ export default function Products({ category, setCategory, onButtonClick }) {
                     <li className='category-link' onClick={() => onButtonClick("marvel")}>Marvel</li>
                     <li className='category-link' onClick={() => onButtonClick("dc")}>DC</li>
                   </ul>
-                  <div className='price-range'>
+                  {/* <div className='price-range'>
                     <p className='cat-head'>Price</p>
                     <p>{price}</p>
                     <input
@@ -75,7 +75,7 @@ export default function Products({ category, setCategory, onButtonClick }) {
                       ref={priceRef}
                       onChange={priceHandler}
                     />
-                  </div>
+                  </div> */}
                   <div><button className='clear-filters cat-head' onClick={() => clearFilters()}>Clear Filters</button></div>
 
                 </div>
